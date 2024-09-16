@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+.project-overview {
+    background-color: #333333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.project-overview h1 {
+    margin-bottom: 20px;
+}
+
+.project-overview .tags {
+    margin-bottom: 20px;
+}
+
+.project-overview .badge {
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.project-overview .btn-github, .project-overview .btn-linkedin {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.project-overview .btn-github {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+}
+
+.project-overview .btn-github:hover {
+    background-color: #555555;
+    color: #fff;
+}
+
+.project-overview .btn-linkedin {
+    background-color: #0077b5;
+    color: #fff;
+    border: none;
+}
+
+.project-overview .btn-linkedin:hover {
+    background-color: #005582;
+    color: #fff;
+}
+
+.project-overview .carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 50px 0;
+}
+
+.project-details h2 {
+    margin-bottom: 20px;
+}
+
+.project-details pre {
+    background-color: #333333;
+    color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}

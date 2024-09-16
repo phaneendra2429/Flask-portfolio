@@ -1,0 +1,23 @@
+[
+    {
+        "title": "ML Chicken Disease Classification",
+        "description": "This is the basic Description of the project that contain so and so",
+        "labels": [
+            "ML",
+            " MLOps",
+            " DVC",
+            " Git Actions"
+        ],
+        "image_placeholder": "200 x 200"
+    },
+    {
+        "title": "SOmthing",
+        "description": "Nothing",
+        "labels": [
+            "Tensorflow",
+            " AWS",
+            " Open cv"
+        ],
+        "image_placeholder": "200 x 200"
+    }
+]

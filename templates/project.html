@@ -1,0 +1,26 @@
+<!-- In templates/project.html -->
+<h1>{{ project.name }}</h1>
+<p>{{ project.overview }}</p>
+<div class="tags">
+    {% for tag in project.tags %}
+        <span class="badge badge-pill badge-primary">{{ tag }}</span>
+    {% endfor %}
+</div>
+<a href="{{ project.github }}" target="_blank" class="btn btn-dark">GitHub</a>
+<a href="{{ project.linkedin }}" target="_blank" class="btn btn-primary">LinkedIn</a>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for image in project.images %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <img src="{{ image }}" class="d-block w-100" alt="{{ project.name }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<h2>Readme</h2>
+<pre>{{ project.readme }}</pre>
+
+<h2>Project Video</h2>
+<iframe src="{{ project.video }}" allowfullscreen></iframe>
