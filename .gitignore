@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-myssh.ppk
+myssh
 
 # Distribution / packaging
 .Python
