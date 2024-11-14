@@ -85,7 +85,7 @@
                             {% for project in projects %}
                             <div class="project-card">
                                 <div class="project-image-placeholder">
-                                    <p>{{ project.image_placeholder }}</p>
+                                    <img src="{{ project.image_placeholder }}" alt="{{ project.title }}" width="220" height="200">
                                 </div>
                                 <div class="project-info">
                                     <h3>{{ project.title }}</h3>
@@ -189,7 +189,7 @@
                         const projectCard = `
                         <div class="project-card">
                             <div class="project-image-placeholder">
-                                <p>${project.image_placeholder}</p>
+                                <img src=${ project.image_placeholder } alt=${ project.title } width="220" height="200">
                             </div>
                             <div class="project-info">
                                 <h3>${project.title}</h3>

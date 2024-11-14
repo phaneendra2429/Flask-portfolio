@@ -182,7 +182,7 @@ footer {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    width: 220px; /* Card width adjusted */
+    width: 250px; /* Card width adjusted */
     transition: border 0.3s, transform 0.3s;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -195,7 +195,7 @@ footer {
 
 /* Image placeholder for the project card */
 .project-image-placeholder {
-    width: 200px; /* Increased size to 200x200 */
+    width: 220px; /* Increased size to 200x200 */
     height: 200px;
     display: flex;
     align-items: center;
@@ -297,9 +297,12 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     justify-items: center;
-    max-height: 400px; /* Adjust this value based on how much content you want visible */
+    max-height: 800px; /*Adjust this value based on how much content you want visible*/
     overflow-y: auto; /* Add vertical scroll if content exceeds max-height */
     padding-right: 10px; /* Add padding to avoid scrollbar overlap */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 /* Optional: To customize the scrollbar appearance for the project section */
