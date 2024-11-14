@@ -1,0 +1,33 @@
+[
+    {
+        "title": "AI Workshop",
+        "description": "Join us for a hands-on workshop on the latest in AI technology.",
+        "tags": [
+            "AI",
+            "Workshop",
+            "Networking"
+        ],
+        "image_url": "https://via.placeholder.com/600x200"
+    },
+    {
+        "title": "Data Science Conference",
+        "description": "A premier event gathering data science professionals to discuss innovations.",
+        "tags": [
+            "Data Science",
+            "Conference",
+            "Keynote"
+        ],
+        "image_url": "https://via.placeholder.com/600x200"
+    },
+    {
+        "title": "RAG Workshop for FAU Students",
+        "description": "I have creted a RAG workshop for the stufdent of FAU",
+        "tags": [
+            "RAD",
+            " Agents",
+            " LLM",
+            " LangChain"
+        ],
+        "image_url": "https://i.ibb.co/L9qyNWd/image.png"
+    }
+]

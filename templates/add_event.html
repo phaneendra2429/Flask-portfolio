@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add a New Event</h2>
+        <form method="POST">
+            <label for="title">Event Title</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="tags">Tags (comma separated)</label>
+            <input type="text" id="tags" name="tags" required>
+            
+            <label for="image_url">Image URL</label>
+            <input type="url" id="image_url" name="image_url" required>
+
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+</body>
+</html>

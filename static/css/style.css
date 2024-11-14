@@ -72,6 +72,35 @@ p, ul {
     font-size: 1.2rem;
 }
 
+.profile-section h5 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.profile-list li {
+    justify-content: center;
+}
+
+.profile-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    padding: 8px 0;
+}
+
+.profile-list li img {
+    width: 30px;
+    margin-right: 10px;
+}
+
 .btn-outline-primary {
     border-color: #0a66c2;
     color: #0a66c2;
@@ -383,3 +412,4 @@ h1 {
 .read-more-link:hover {
     text-decoration: underline;
 }
+

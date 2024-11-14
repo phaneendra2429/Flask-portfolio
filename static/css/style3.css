@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-title {
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    width: 80%;  /* Set to 80% of the page width */
+    max-width: 1200px;  /* Set a maximum width for larger screens */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 40px;  /* Center the container */
+}
+
+/* Event Cards */
+.event-card {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;  /* Full width of the container */
+}
+
+/* Event Content */
+.event-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.event-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.event-description {
+    color: #666;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.tag {
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* More Button */
+.more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px auto 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.more-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Header */
+
+/* Custom Navbar Styling */
+.custom-navbar {
+    background-color: #f8f9fa; /* Light background color */
+    border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+.nav-link {
+    font-size: 1em;
+    color: #555;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.book-call-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Adjust navbar spacing on mobile */
+@media (max-width: 992px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .book-call-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}

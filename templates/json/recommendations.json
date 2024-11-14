@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Ankitha Beeram",
+        "title": "MSIM @ UIUC | Data Science & Analytics",
+        "recommendation": "Working with Phaneendra on an Omdena project was a remarkable experience. He has exceptional ...",
+        "date": "July 27, 2024",
+        "image": "https://i.ibb.co/fSFHBPZ/Ankitha.jpg"
+    },
+    {
+        "name": "Pranav Gavali",
+        "title": "Data Analytics, Visualization & Journalist | Applied GenAI Developer ",
+        "recommendation": "I strongly endorse Phaneendra Ganji for his exceptional dedication and problem-solving.  ...",
+        "date": "July 4, 2024",
+        "image": "https://i.ibb.co/x3tjpsz/pranav.jpg"
+    },
+    {
+        "name": "Meriem Baziz",
+        "title": "Computer Science Engineer | Master's Graduate | AI & Full Stack Enthusiast",
+        "recommendation": "It was a privilege to work with Phaneendra on an innovative project initiated by Omdena ....",
+        "date": "May 14, 2024",
+        "image": "https://i.ibb.co/crZp4Pp/image.png"
+    },
+    {
+        "name": "Muhammad Yahiya",
+        "title": "AI/ML Researcher | Architect | Philosopher -Meaning of Life",
+        "recommendation": "I had the incredible opportunity to collaborate with Phaneendra G on Multi Agents ...",
+        "date": "May 14, 2024",
+        "image": "https://i.ibb.co/KwJqfWK/yahya.png"
+    },
+    {
+        "name": "Vijaya Krishna K",
+        "title": "AI researcher | Jr. ML Engineer",
+        "recommendation": "He led the development of a Mental Health Chatbot, harnessing Large Language Models (LLMs) ...",
+        "date": "May 14, 2024",
+        "image": "https://i.ibb.co/BzV71QN/vijay.png"
+    },
+    {
+        "name": "Elizabeth Waithaka",
+        "title": "Human Resource Business Partner || People Analytics",
+        "recommendation": "Phaneendra is such a pleasure to work with. He is a great communicator, resilient in tackling  ...",
+        "date": "April 10, 2024",
+        "image": "https://i.ibb.co/RHWCGfZ/Lizz.png"
+    }
+]

@@ -3,38 +3,66 @@ import json
 
 app = Flask(__name__)
 
-projects = "cards_data.json"
-recommendation = "recommendations.json"
-
-# Load projects from cards_data.json
-# with open('cards_data.json', 'r') as f:
-#     projects_data = json.load(f)
-
-# Load JSON content
-def load_json(recommendation):
-    with open(recommendation, "r") as f:
+# Load data from JSON files
+def load_json(file):
+    with open(file, "r") as f:
         return json.load(f)
 
-# Save data to JSON file
+# Save data to JSON files
 def save_to_json(data, file):
     with open(file, "w") as f:
         json.dump(data, f, indent=4)
-    
 
-projects_data = load_json(projects)
-recommendations = load_json(recommendation)
+# Define file paths for each JSON file
+projects_file = "templates/json/cards_data.json"
+recommendations_file = "templates/json/recommendations.json"
+events_file = "templates/json/events.json"  # Define the path for events.json
+
+# Load existing JSON data
+projects_data = load_json(projects_file)
+recommendations = load_json(recommendations_file)
+events_data = load_json(events_file)  # Corrected to use events_file
 
 @app.route('/')
 def index():
-    # Load all projects by default
-    return render_template('index.html', projects=projects_data, recommendations = recommendations)
+    # Load all projects, recommendations, and events by default
+    return render_template('index.html', projects=projects_data, recommendations=recommendations)
 
 @app.route('/filter_projects', methods=['POST'])
 def filter_projects():
     category = request.json['category']
     filtered_projects = [project for project in projects_data if category in project['labels']]
-    
     return jsonify(filtered_projects)
+
+# New route for events page
+@app.route('/events')
+def events():
+    print("Accessing the events page")  # Debug statement
+    print(events_data)  # Print the events data to verify it's loaded
+    return render_template('events.html', events=events_data)
+
+# New route for adding an event
+@app.route('/add_event', methods=['GET', 'POST'])
+def add_event():
+    if request.method == "POST":
+        title = request.form["title"]
+        description = request.form["description"]
+        tags = request.form["tags"].split(",")
+        image_url = request.form["image_url"]
+
+        # Add the new event to events_data and save
+        new_event = {
+            "title": title,
+            "description": description,
+            "tags": tags,
+            "image_url": image_url
+        }
+        events_data.append(new_event)
+        save_to_json(events_data, events_file)  # Corrected to save to events_file
+        
+        return redirect(url_for("events"))
+
+    return render_template("add_event.html")
 
 
 # Adding Project
@@ -65,7 +93,7 @@ def add_project():
 
 
 # Adding Recommendation
-@app.route('/add-recommendation', methods=['GET', 'POST'])
+@app.route('/add_recommendation', methods=['GET', 'POST'])
 def add_recommendation():
     if request.method == 'POST':
         # Get form data
