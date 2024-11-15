@@ -1,45 +1,25 @@
 [
     {
-        "title": "ML Chicken Disease Classification",
-        "description": "This is the basic Description of the project that contain so and so",
+        "title": "Melanoma Skin Cancer Detection",
+        "description": "The objective of the project is to develop a deep learning system for detecting Melanoma skin cancer",
         "labels": [
             "ML",
-            " MLOps",
-            " DVC",
-            " Git Actions"
+            " Data Cleaning",
+            " Data Analysis"
         ],
-        "image_placeholder": "https://i.ibb.co/BtGQ5RY/F-vfwtda-MAENLjr.jpg"
+        "image_placeholder": "https://phaneendra2429.github.io/portfolio/projects/ML%20Projects/image2.png",
+        "github": "https://github.com/phaneendra2429/Melanoma-skin-cancer"
     },
     {
-        "title": "SOmthing",
-        "description": "Nothing",
+        "title": "Image Gallery Application using Flask",
+        "description": "The Image Gallery Application is a web-based platform designed to allow users to securely upload, manage, and view images",
         "labels": [
             "AWS",
-            "Tensorflow",
-            " Open cv"
-        ],
-        "image_placeholder": "200 x 200"
-    },
-    {
-        "title": "new Project",
-        "description": "This includes that and this",
-        "labels": [
-            "Gen AI",
-            " MLops",
-            " AWS",
-            " SQL"
-        ],
-        "image_placeholder": "200 x 200"
-    },
-    {
-        "title": "Fun Project",
-        "description": "This project is included with RAG agents",
-        "labels": [
-            "AWS",
-            " Hugging Face",
+            " GCP",
             " Flask",
-            " RAG"
+            " Firebase"
         ],
-        "image_placeholder": "https://i.ibb.co/Jc3xtzt/GCR8d-Rxa-IAACFLw.jpg"
+        "image_placeholder": "https://phaneendra2429.github.io/portfolio/projects/cloud/image.png",
+        "github": "https://github.com/phaneendra2429/gallery_app-main"
     }
 ]

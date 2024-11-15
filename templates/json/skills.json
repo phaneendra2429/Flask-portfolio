@@ -1,0 +1,81 @@
+{
+    "Data Analysis": [
+        "Cleaning",
+        "Manipulation",
+        "EDA",
+        "Pattern Extraction",
+        "Data Mining"
+    ],
+    "Statistical Analysis": [
+        "Hypothesis Testing",
+        "Regression",
+        "A/B Testing"
+    ],
+    "Data Visualization": [
+        "Tableau",
+        "Power BI",
+        "Matplotlib",
+        "Seaborn"
+    ],
+    "Programming": [
+        "Python",
+        "C",
+        "C++",
+        "Java",
+        "R",
+        "Flask",
+        "Fast API",
+        "Django"
+    ],
+    "Database Management": [
+        "SQL",
+        "MySQL",
+        "MongoDB"
+    ],
+    "Cloud Platforms": [
+        "Google Cloud Platform",
+        "AWS",
+        "Kubernetes"
+    ],
+    "Machine Learning": [
+        "Decision Trees",
+        "Random Forest",
+        "Logistic Regression",
+        "Clustering",
+        "NLP",
+        "RASA"
+    ],
+    "Deep Learning": [
+        "Neural Networks",
+        "CNNs",
+        "RNNs",
+        "GANs",
+        "Tensorflow",
+        "Keras"
+    ],
+    "Big Data": [
+        "Hadoop",
+        "Spark"
+    ],
+    "Tools": [
+        "MLOps",
+        "MLFlow",
+        "Git",
+        "Github",
+        "Github Actions",
+        "Excel",
+        "Google Analytics",
+        "Apache Airflow"
+    ],
+    "Gen AI": [
+        "RAG models",
+        "LLMs",
+        "Agents",
+        "Llama index",
+        "LangChain",
+        "Vector DB",
+        "Embeddings",
+        "LoRa & QLoRa fine tuning methods",
+        "Prompt Engineering"
+    ]
+}

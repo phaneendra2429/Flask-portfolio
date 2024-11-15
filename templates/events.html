@@ -17,7 +17,7 @@
     <div class="banner">
         <img src="https://i.ibb.co/Xpx44Cz/image.png" alt="Event Banner" class="banner-image">
         <div class="banner-overlay">
-            <h1 class="banner-title">Upcoming Events</h1>
+            <h1 class="banner-title">Events Conducted</h1>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
                     <span class="tag">{{ tag }}</span>
                     {% endfor %}
                 </div>
-                <a href="#" class="more-button">Learn More</a>
+                <a href="{{event.post_url}}" class="more-button">Learn More</a>
             </div>
         </div>
         {% endfor %}
