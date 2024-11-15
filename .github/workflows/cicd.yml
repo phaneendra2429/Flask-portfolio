@@ -62,6 +62,7 @@ jobs:
     - name: Image digest
       run: echo ${{ steps.build-and-publish.outputs.digest }}
 
+      
   deploy-to-ec2:
     needs: build-and-publish
     runs-on: ubuntu-latest
