@@ -7,19 +7,43 @@
             " Data Cleaning",
             " Data Analysis"
         ],
-        "image_placeholder": "https://phaneendra2429.github.io/portfolio/projects/ML%20Projects/image2.png",
+        "image_placeholder": "https://i.ibb.co/YTGYPJn/image.png",
         "github": "https://github.com/phaneendra2429/Melanoma-skin-cancer"
     },
     {
         "title": "Image Gallery Application using Flask",
-        "description": "The Image Gallery Application is a web-based platform designed to allow users to securely upload, manage, and view images",
+        "description": "Web-based platform designed to allow users to securely upload, manage, and view images",
         "labels": [
             "AWS",
             " GCP",
             " Flask",
             " Firebase"
         ],
-        "image_placeholder": "https://phaneendra2429.github.io/portfolio/projects/cloud/image.png",
+        "image_placeholder": "https://i.ibb.co/rGYFtzC/image.png",
         "github": "https://github.com/phaneendra2429/gallery_app-main"
+    },
+    {
+        "title": "Flask Flow CI/CD",
+        "description": "A mini flask app CI/CD deployment with github actions and Docker image generation.",
+        "labels": [
+            "as",
+            " Github Actions",
+            " CI/CD",
+            " Docker "
+        ],
+        "image_placeholder": "https://i.ibb.co/4gWGYVp/image.png",
+        "github": "https://github.com/phaneendra2429/CICD-mini"
+    },
+    {
+        "title": "Credit Card Fraud Detection",
+        "description": "Detecting fraudulent credit card transactions using data preprocessing, exploratory analysis, and machine learning classification techniques.",
+        "labels": [
+            "as",
+            " EDA-PCA",
+            " XGBoost",
+            " Random Forest"
+        ],
+        "image_placeholder": "https://i.ibb.co/mcfvtSJ/image.png",
+        "github": "https://github.com/phaneendra2429/Credit-Card-Fraud-Detection"
     }
 ]

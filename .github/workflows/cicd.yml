@@ -63,19 +63,19 @@ jobs:
       run: echo ${{ steps.build-and-publish.outputs.digest }}
 
     
-  deploy-to-ec2:
-    needs: build-and-publish
-    runs-on: ubuntu-latest
-    steps:
-      - name: SSH into EC2 and Update Container
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
-          script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
-            docker stop flask_container || true
-            docker rm flask_container || true
-            docker run -d --name flask_container -p 80:5000 ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
+  # deploy-to-ec2:
+  #   needs: build-and-publish
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: SSH into EC2 and Update Container
+  #       uses: appleboy/ssh-action@v0.1.7
+  #       with:
+  #         host: ${{ secrets.EC2_HOST }}
+  #         username: ${{ secrets.EC2_USERNAME }}
+  #         key: ${{ secrets.EC2_SSH_KEY }}
+  #         port: 22
+  #         script: |
+  #           docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
+  #           docker stop flask_container || true
+  #           docker rm flask_container || true
+  #           docker run -d --name flask_container -p 80:5000 ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
