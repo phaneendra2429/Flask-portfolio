@@ -20,19 +20,22 @@ events_file = "templates/json/events.json"
 skills = "templates/json/skills.json"
 
 # Load existing JSON data
-projects_data = load_json(projects_file)
-recommendations = load_json(recommendations_file)
-events_data = load_json(events_file)  # Corrected to use events_file
+# projects_data = load_json(projects_file)
+# recommendations = load_json(recommendations_file)
+# events_data = load_json(events_file)  # Corrected to use events_file
 
 
 @app.route('/')
 def index():
     # Load all projects, recommendations, and events by default
+    projects_data = load_json(projects_file)
+    recommendations = load_json(recommendations_file)
     skills_data = load_json(skills) 
     return render_template('index.html', projects=projects_data, recommendations=recommendations, skills_data=skills_data)
 
 @app.route('/filter_projects', methods=['POST'])
 def filter_projects():
+    projects_data = load_json(projects_file)
     category = request.json['category']
     filtered_projects = [project for project in projects_data if category in project['labels']]
     return jsonify(filtered_projects)
@@ -72,6 +75,7 @@ def add_event():
 # Adding Project
 @app.route('/add_project', methods=['GET', 'POST'])
 def add_project():
+    projects_data = load_json(projects_file)
     if request.method == 'POST':
         title = request.form['title']
         description = request.form['description']
@@ -93,9 +97,24 @@ def add_project():
         save_to_json(projects_data, projects_file)  # Corrected to save to projects_file
 
         return redirect(url_for('index'))
-    return render_template('add_project.html')
+    return render_template('add_project.html', projects=projects_data)
 
+@app.route('/edit_project/<int:project_index>', methods=['GET', 'POST'])
+def edit_project(project_index):
+    projects_data = load_json(projects_file)
+    project = projects_data[project_index]
 
+    if request.method == 'POST':
+        project['title'] = request.form['title']
+        project['description'] = request.form['description']
+        project['labels'] = request.form['labels'].split(',')
+        project['image_placeholder'] = request.form['image']
+        project['github'] = request.form['github']
+
+        save_to_json(projects_data, projects_file)
+        return redirect(url_for('add_project'))
+
+    return render_template('edit_project.html', project=project, project_index=project_index)
 
 # Adding Recommendation
 @app.route('/add_recommendation', methods=['GET', 'POST'])

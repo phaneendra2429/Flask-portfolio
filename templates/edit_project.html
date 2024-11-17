@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Project</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Edit Project</h1>
+    <form method="POST" action="/edit_project/{{ project_index }}">
+        <label for="title">Project Title:</label>
+        <input type="text" id="title" name="title" value="{{ project.title }}" required><br><br>
+
+        <label for="description">Project Description:</label>
+        <textarea id="description" name="description" required>{{ project.description }}</textarea><br><br>
+
+        <label for="labels">Labels (comma separated):</label>
+        <input type="text" id="labels" name="labels" value="{{ ','.join(project.labels) }}" required><br><br>
+
+        <label for="image">Image Link (e.g., 200x200):</label>
+        <input type="text" id="image" name="image" value="{{ project.image_placeholder }}"><br><br>
+
+        <label for="github">GitHub Link:</label>
+        <input type="url" id="github" name="github" value="{{ project.github }}" required><br><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="/">Back to Projects</a>
+</body>
+</html>

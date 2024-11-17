@@ -26,7 +26,7 @@
         "title": "Flask Flow CI/CD",
         "description": "A mini flask app CI/CD deployment with github actions and Docker image generation.",
         "labels": [
-            "as",
+            "all",
             " Github Actions",
             " CI/CD",
             " Docker "
@@ -38,12 +38,47 @@
         "title": "Credit Card Fraud Detection",
         "description": "Detecting fraudulent credit card transactions using data preprocessing, exploratory analysis, and machine learning classification techniques.",
         "labels": [
-            "as",
+            "ML",
             " EDA-PCA",
             " XGBoost",
             " Random Forest"
         ],
         "image_placeholder": "https://i.ibb.co/mcfvtSJ/image.png",
         "github": "https://github.com/phaneendra2429/Credit-Card-Fraud-Detection"
+    },
+    {
+        "title": "Chicken Disease Classification",
+        "description": "End-to-end deep learning project for chicken disease classification using MLOps DVC pipeline, deployed on AWS.",
+        "labels": [
+            "ML",
+            " MLops",
+            " DVC",
+            " AWS"
+        ],
+        "image_placeholder": "https://i.ibb.co/94tt6BY/giphy.webp",
+        "github": "https://github.com/phaneendra2429/Chicken-desease-Classification"
+    },
+    {
+        "title": "Layoff Insights: Data Cleaning and Exploratory Analysis Project",
+        "description": "Comprehensive data cleaning and exploratory analysis of a layoffs dataset to uncover trends, patterns, and company-specific insights over time.",
+        "labels": [
+            "SQL",
+            " Data Quality",
+            " Layoff Patterns",
+            " EDA"
+        ],
+        "image_placeholder": "https://i.ibb.co/QkSQNmG/image.png",
+        "github": "https://github.com/phaneendra2429/Portfolio_Projects/tree/main/SQL/Project%202"
+    },
+    {
+        "title": "Coffee Shop Dashboard Project",
+        "description": "Tool designed to integrate and analyze transactional data, creating visualizations and reports. ",
+        "labels": [
+            "Excel",
+            " Dashboard",
+            " Data Analysis"
+        ],
+        "image_placeholder": "https://i.ibb.co/4S5kBPm/image.png",
+        "github": "https://github.com/phaneendra2429/Portfolio_Projects/tree/main/Excel/Project%201"
     }
 ]
