@@ -49,6 +49,7 @@ def events():
 # New route for adding an event
 @app.route('/add_event', methods=['GET', 'POST'])
 def add_event():
+    events_data = load_json(events_file)
     if request.method == "POST":
         title = request.form["title"]
         description = request.form["description"]
