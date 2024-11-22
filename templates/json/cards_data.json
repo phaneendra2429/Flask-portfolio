@@ -1,5 +1,17 @@
 [
     {
+        "title": "Inventory Management System",
+        "description": "Using QR codes to manage equipment and update the status of previous repairs and managing the access by user authentication. ",
+        "labels": [
+            "all",
+            " Android Studio",
+            " Firebase - [Authentication",
+            " Storage]"
+        ],
+        "image_placeholder": "https://i.ibb.co/KmYNHvq/image.png",
+        "github": "http://not-yet-added"
+    },
+    {
         "title": "Melanoma Skin Cancer Detection",
         "description": "The objective of the project is to develop a deep learning system for detecting Melanoma skin cancer",
         "labels": [
@@ -80,5 +92,45 @@
         ],
         "image_placeholder": "https://i.ibb.co/4S5kBPm/image.png",
         "github": "https://github.com/phaneendra2429/Portfolio_Projects/tree/main/Excel/Project%201"
+    },
+    {
+        "title": "Portfolio Website",
+        "description": "Built a personal portfolio website from scratch using Flask, Docker, Github Actions and AWS EC2",
+        "labels": [
+            "AWS",
+            " Flask",
+            " Docker",
+            " Github Actions",
+            " EC2"
+        ],
+        "image_placeholder": "https://i.ibb.co/q70FXBT/screen.jpg",
+        "github": "https://not-public-yet"
+    },
+    {
+        "title": "Mental Health Chatbot",
+        "description": "Built using RAG using Mistral Open Source LLM and LangChain on Streamlit. Deployed it on Huggingface.",
+        "labels": [
+            "Gen AI",
+            " LLM",
+            " RAG",
+            " Huggingface",
+            " Langchain",
+            " Guardrail"
+        ],
+        "image_placeholder": "https://i.ibb.co/C9SQcdG/file-67ff-ZAj2-RSv-Ae-Pvrq-Gaq-SXx-Y.webp",
+        "github": "https://github.com/phaneendra2429/Mental_Health_Chatbot"
+    },
+    {
+        "title": "LLM Agents",
+        "description": "Using Langchain to build LLM Agent that can work with RAG and Wiki Tool (For Live Info) understanding the user Command.",
+        "labels": [
+            "Gen AI",
+            " Agents",
+            " RAG",
+            " LangChain"
+        ],
+        "image_placeholder": "https://i.ibb.co/94tt6BY/giphy.webp",
+        "github": "http://not-yet-added"
     }
+    
 ]

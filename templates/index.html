@@ -90,7 +90,7 @@
                             <button class="project-tag" data-category="AWS">AWS</button>
                         </div>
                         <div class="project-grid" id="projectGrid">
-                            {% for project in projects %}
+                            {% for project in projects|reverse %}
                             <div class="project-card">
                                 <div class="project-image-placeholder">
                                     <img src="{{ project.image_placeholder }}" alt="{{ project.title }}" width="220" height="200">
