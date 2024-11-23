@@ -52,21 +52,38 @@ body {
     margin: 0 auto 40px;  /* Center the container */
 }
 
+/* Section Title */
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 /* Event Cards */
 .event-card {
+    display: flex; /* Use flexbox for layout */
     background-color: #fdfdfd;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 20px 0;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;  /* Full width of the container */
+    width: 100%; /* Full width of the container */
+}
+
+/* Event Image */
+.event-card img{
+    width: 40%; /* Set the width of the image */
+    object-fit: cover; /* Ensure the image covers the space */
 }
 
 /* Event Content */
 .event-content {
+    width: 60%; /* Set the width of the content */
     padding: 15px;
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
 .event-title {
@@ -101,9 +118,10 @@ body {
 
 /* More Button */
 .more-button {
-    display: inline-block;
+    display: block; /* Change to block to center */
+    text-align: center; /* Center the text inside the button */
     padding: 10px 20px;
-    margin: 10px auto 15px;
+    margin: 10px auto 15px; /* Center the button horizontally */
     background-color: #007bff;
     color: #fff;
     border-radius: 5px;
@@ -115,52 +133,4 @@ body {
 
 .more-button:hover {
     background-color: #0056b3;
-}
-
-
-/* Header */
-
-/* Custom Navbar Styling */
-.custom-navbar {
-    background-color: #f8f9fa; /* Light background color */
-    border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
-}
-
-.navbar-brand {
-    font-size: 1.5em;
-    color: #333;
-    text-decoration: none;
-}
-
-.navbar-brand:hover {
-    color: #0056b3;
-}
-
-.nav-link {
-    font-size: 1em;
-    color: #555;
-}
-
-.nav-link:hover {
-    color: #007bff;
-}
-
-.book-call-btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-/* Adjust navbar spacing on mobile */
-@media (max-width: 992px) {
-    .navbar-nav {
-        margin-top: 10px;
-    }
-
-    .book-call-btn {
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
-    }
 }

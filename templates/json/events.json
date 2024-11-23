@@ -1,5 +1,33 @@
-[
-    
+    [{
+        "title": "Climate Change Meetup ",
+        "description": "We are thrilled to share the resounding success of our Innovations in Climate Engineering, AI Development & Fintech event! \ud83c\udf1f\r\nA heartfelt THANK YOU to everyone who made this event a reality:\r\n\ud83d\udca1 Our Speakers:\r\nChaochao Zuo, CFA for sharing groundbreaking insights on AI-driven solutions.\r\nVibha R. Rathi for her visionary talk on the future of climate engineering.",
+        "tags": [
+            "#Networking ",
+            " #Innovation ",
+            " #AI ",
+            " #ClimateEngineering ",
+            " #Fintech ",
+            " #TechCommunity"
+        ],
+        "image_url": "https://i.ibb.co/2KkbNtm/image.png",
+        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_eventsuccess-thankyou-networking-activity-7265831415823405056-pYUm?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "title": "Women in Tech",
+        "description": "\ud83c\udf1f The \"Women in Tech\" event on October 23rd, 2024 was a remarkable gathering of 300+ attendees, each bringing contagious energy and enthusiasm. The room was alive with shared purpose, camaraderie, and a passion for growth and empowerment\u2014truly reflecting the strength of this community.\r\n",
+        "tags": [
+            "#WomenInTech ",
+            "#Empowerment",
+            " #Mentorship",
+            " #AI",
+            "#TechCommunity",
+            "#WomenEmpowerment",
+            "#CareerGrowth",
+            "#SeattleDataAI"
+        ],
+        "image_url": "https://i.ibb.co/7Rz273R/image.png",
+        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_womenintech-empowerment-mentorship-activity-7257158796815278080-id-C?utm_source=share&utm_medium=member_desktop"
+    },
     {
         "title": "RAG Workshop for FAU students",
         "description": "Conducted 2 sessions on different RAG models. \r\n1. Q&A with PDF using RAG\r\n2. Chat with PDF chat memory ",
@@ -10,7 +38,21 @@
             " Deployment",
             " Lang Chain"
         ],
-        "image_url": "",
+        "image_url": "https://i.ibb.co/b7t0dRr/image.png",
         "post_url": "https://www.linkedin.com/posts/pace-club_paceclub-floridaatlanticuniversity-rag-activity-7232970860339302400-W7YB?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "title": "Meetup Sep 24",
+        "description": "\ud83c\udf89 Thrilled to have been a part of organizing such a massive event!\r\nIt was an incredible success with over 250+ participants joining us at the Seattle Data, AI, and Security Event at Microsoft Reactor, Redmond.\r\nThe event was packed with insightful sessions, and it was amazing to witness the enthusiasm and engagement from everyone. \ud83d\ude4c",
+        "tags": [
+            "#AIinHealthcare",
+            " #MachineLearningGovernance",
+            " #AzureAI",
+            " #ModernDataLandscapes"
+        ],
+        "image_url": "https://i.ibb.co/J2vN9FV/image.png",
+        "post_url": "https://www.linkedin.com/posts/phaneendra-g_aiseattle-techcommunity-seattletech-activity-7246302571596849152-shE_?utm_source=share&utm_medium=member_desktop"
     }
+    
+    
 ]
