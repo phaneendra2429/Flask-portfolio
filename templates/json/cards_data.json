@@ -121,7 +121,7 @@
         "github": "https://github.com/phaneendra2429/Mental_Health_Chatbot"
     },
     {
-        "title": "LLM Agents",
+        "title": "Multi Model AI Agent with RAG and Wiki",
         "description": "Using Langchain to build LLM Agent that can work with RAG and Wiki Tool (For Live Info) understanding the user Command.",
         "labels": [
             "Gen AI",
@@ -129,8 +129,7 @@
             " RAG",
             " LangChain"
         ],
-        "image_placeholder": "https://i.ibb.co/94tt6BY/giphy.webp",
-        "github": "http://not-yet-added"
+        "image_placeholder": "https://i.ibb.co/X87MMFx/Muiltimodel.webp",
+        "github": "https://github.com/phaneendra2429/Agent-RAG"
     }
-    
 ]

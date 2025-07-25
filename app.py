@@ -44,33 +44,67 @@ def filter_projects():
 @app.route('/events')
 def events():
     events_data = load_json(events_file)
-    return render_template('events.html', events=events_data)
+    in_person_events = [e for e in events_data if e.get('mode') == 'in_person']
+    online_events = [e for e in events_data if e.get('mode') == 'online']
+    return render_template('events.html', in_person=in_person_events, online=online_events)
 
 # New route for adding an event
 @app.route('/add_event', methods=['GET', 'POST'])
 def add_event():
     events_data = load_json(events_file)
+
     if request.method == "POST":
         title = request.form["title"]
         description = request.form["description"]
         tags = request.form["tags"].split(",")
         image_url = request.form["image_url"]
         post_url = request.form["post_url"]
+        mode = request.form["mode"]
 
-        # Add the new event to events_data and save
         new_event = {
             "title": title,
             "description": description,
             "tags": tags,
             "image_url": image_url,
-            "post_url": post_url
+            "post_url": post_url,
+            "mode": mode
         }
-        events_data.append(new_event)
-        save_to_json(events_data, events_file)  # Corrected to save to events_file
-        
-        return redirect(url_for("events"))
+        events_data.insert(0, new_event)
+        save_to_json(events_data, events_file)
 
-    return render_template("add_event.html")
+        return redirect(url_for("add_event"))
+
+    return render_template("add_event.html", events=events_data)  # <-- KEY FIX
+
+# Editing the events
+@app.route('/edit_event/<int:index>', methods=['GET', 'POST'])
+def edit_event(index):
+    events_data = load_json(events_file)
+    event = events_data[index]
+
+    if request.method == 'POST':
+        event['title'] = request.form['title']
+        event['description'] = request.form['description']
+        event['tags'] = request.form['tags'].split(',')
+        event['image_url'] = request.form['image_url']
+        event['post_url'] = request.form['post_url']
+        event['mode'] = request.form['mode']
+
+
+        save_to_json(events_data, events_file)
+        return redirect(url_for('add_event'))
+
+    return render_template('edit_event.html', event=event, index=index)
+
+@app.route('/delete_event/<int:index>')
+def delete_event(index):
+    events_data = load_json(events_file)
+
+    if 0 <= index < len(events_data):
+        del events_data[index]
+        save_to_json(events_data, events_file)
+
+    return redirect(url_for('add_event'))
 
 
 # Adding Project
@@ -116,6 +150,8 @@ def edit_project(project_index):
         return redirect(url_for('add_project'))
 
     return render_template('edit_project.html', project=project, project_index=project_index)
+
+
 
 # Adding Recommendation
 @app.route('/add_recommendation', methods=['GET', 'POST'])

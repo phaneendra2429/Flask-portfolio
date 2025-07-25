@@ -1,32 +1,61 @@
-    [{
+[
+    {
+        "title": "Our First Hackathon",
+        "description": "A powerful weekend of innovation, collaboration, and community at the Seattle Data AI Hackathon\u2014proud to be part of something truly impactful! \ud83d\ude80",
+        "tags": [
+            "Hackathon",
+            " Networking",
+            " Innovations",
+            " Winners"
+        ],
+        "image_url": "https://i.ibb.co/twGhjZDX/image.png",
+        "post_url": "https://www.linkedin.com/posts/phaneendra-g_seattledataai-hackathon-aicommunity-activity-7316954251027501056-Qobh?utm_source=share&utm_medium=member_desktop&rcm=ACoAACT3IfgBx8-RPx0xT-Qb6Hy-TfHHPVZZdhA",
+        "mode": "in_person"
+    },
+    {
+        "title": "Networking Mixer",
+        "description": "We are happy to make our last in-person meetup of the year so wonderful\ud83e\udd29. The Networking Mixer we conducted on 10 Dec was solely for networking for our community where attendees met like-minded people, potential employers, and employees, and few found their mentors as well.",
+        "tags": [
+            "Networking",
+            " Sharing thoughts",
+            " Find Mentors",
+            " Find Employers / Employees"
+        ],
+        "image_url": "https://i.ibb.co/18CN3hZ/image.png",
+        "post_url": "https://www.linkedin.com/posts/phaneendra-g_sdaic-activity-7274280300287778816-2iKC?utm_source=share&utm_medium=member_desktop",
+        "mode": "in_person"
+    },
+    {
         "title": "Climate Change Meetup ",
         "description": "We are thrilled to share the resounding success of our Innovations in Climate Engineering, AI Development & Fintech event! \ud83c\udf1f\r\nA heartfelt THANK YOU to everyone who made this event a reality:\r\n\ud83d\udca1 Our Speakers:\r\nChaochao Zuo, CFA for sharing groundbreaking insights on AI-driven solutions.\r\nVibha R. Rathi for her visionary talk on the future of climate engineering.",
         "tags": [
             "#Networking ",
-            " #Innovation ",
-            " #AI ",
-            " #ClimateEngineering ",
-            " #Fintech ",
-            " #TechCommunity"
+            "  #Innovation ",
+            "  #AI ",
+            "  #ClimateEngineering ",
+            "  #Fintech ",
+            "  #TechCommunity"
         ],
         "image_url": "https://i.ibb.co/2KkbNtm/image.png",
-        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_eventsuccess-thankyou-networking-activity-7265831415823405056-pYUm?utm_source=share&utm_medium=member_desktop"
+        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_eventsuccess-thankyou-networking-activity-7265831415823405056-pYUm?utm_source=share&utm_medium=member_desktop",
+        "mode": "in_person"
     },
     {
         "title": "Women in Tech",
         "description": "\ud83c\udf1f The \"Women in Tech\" event on October 23rd, 2024 was a remarkable gathering of 300+ attendees, each bringing contagious energy and enthusiasm. The room was alive with shared purpose, camaraderie, and a passion for growth and empowerment\u2014truly reflecting the strength of this community.\r\n",
         "tags": [
             "#WomenInTech ",
-            "#Empowerment",
-            " #Mentorship",
-            " #AI",
-            "#TechCommunity",
-            "#WomenEmpowerment",
-            "#CareerGrowth",
-            "#SeattleDataAI"
+            "  #Empowerment",
+            "   #Mentorship",
+            "   #AI",
+            "  #TechCommunity",
+            "  #WomenEmpowerment",
+            "  #CareerGrowth",
+            "  #SeattleDataAI"
         ],
         "image_url": "https://i.ibb.co/7Rz273R/image.png",
-        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_womenintech-empowerment-mentorship-activity-7257158796815278080-id-C?utm_source=share&utm_medium=member_desktop"
+        "post_url": "https://www.linkedin.com/posts/seattle-data-ai-and-security_womenintech-empowerment-mentorship-activity-7257158796815278080-id-C?utm_source=share&utm_medium=member_desktop",
+        "mode": "online"
     },
     {
         "title": "RAG Workshop for FAU students",
@@ -39,7 +68,8 @@
             " Lang Chain"
         ],
         "image_url": "https://i.ibb.co/b7t0dRr/image.png",
-        "post_url": "https://www.linkedin.com/posts/pace-club_paceclub-floridaatlanticuniversity-rag-activity-7232970860339302400-W7YB?utm_source=share&utm_medium=member_desktop"
+        "post_url": "https://www.linkedin.com/posts/pace-club_paceclub-floridaatlanticuniversity-rag-activity-7232970860339302400-W7YB?utm_source=share&utm_medium=member_desktop",
+        "mode": "in_person"
     },
     {
         "title": "Meetup Sep 24",
@@ -51,8 +81,7 @@
             " #ModernDataLandscapes"
         ],
         "image_url": "https://i.ibb.co/J2vN9FV/image.png",
-        "post_url": "https://www.linkedin.com/posts/phaneendra-g_aiseattle-techcommunity-seattletech-activity-7246302571596849152-shE_?utm_source=share&utm_medium=member_desktop"
+        "post_url": "https://www.linkedin.com/posts/phaneendra-g_aiseattle-techcommunity-seattletech-activity-7246302571596849152-shE_?utm_source=share&utm_medium=member_desktop",
+        "mode": "in_person"
     }
-    
-    
 ]
