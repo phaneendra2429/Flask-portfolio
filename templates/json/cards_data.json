@@ -131,5 +131,35 @@
         ],
         "image_placeholder": "https://i.ibb.co/X87MMFx/Muiltimodel.webp",
         "github": "https://github.com/phaneendra2429/Agent-RAG"
+    },
+    {
+        "title": "End-to-End Machine Learning Project",
+        "description": "An end-to-end ML pipeline built with modular MLOps practices, ensuring scalability, reproducibility, and experiment tracking using MLflow and cloud integrations.",
+        "labels": [
+            "ML",
+            " MLOPS",
+            " MLflow",
+            " Dagshub",
+            " MongoDB",
+            " AWS (EC2",
+            " S3)",
+            " Docker"
+        ],
+        "image_placeholder": "https://i.ibb.co/jZPGfCf4/image.png",
+        "github": "https://github.com/phaneendra2429/network-security"
+    },
+    {
+        "title": "Wine Quality Prediction",
+        "description": "A modular end-to-end ML pipeline that predicts wine quality from chemical properties using advanced regression models.",
+        "labels": [
+            "ML",
+            " MLOPS",
+            " Github Actions",
+            " MLFlow",
+            " Dagshub",
+            " Flask"
+        ],
+        "image_placeholder": "https://i.ibb.co/FbB0GmBc/image.png",
+        "github": "https://github.com/phaneendra2429/wine-prediction"
     }
 ]

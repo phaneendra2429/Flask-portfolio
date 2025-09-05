@@ -70,7 +70,7 @@
                 <div class="mb-4">
                     <h2>Summary</h2>
                     <p>
-                        Results-driven ML Engineer and Data Scientist with a Master's in Data Science and over 3 years of experience in Machine Learning, Generative AI, and Cloud Technologies. Proficient in leveraging advanced ML models, including CNNs and RAG pipelines, to deliver cutting-edge solutions in industries like healthcare and financial technology. Expertise in cloud platforms, data visualization, and full-cycle project management, enabling seamless deployment and strategic innovation. Known for collaborative problem-solving, technical excellence, and a strong passion for driving business success through scalable AI-powered solutions.
+                        Results-driven ML Engineer and Data Scientist with a Master's in Data Science and over 4 years of experience in Machine Learning, Generative AI, and Cloud Technologies. Proficient in leveraging advanced ML models, including CNNs and RAG pipelines, to deliver cutting-edge solutions in industries like healthcare and financial technology. Expertise in cloud platforms, data visualization, and full-cycle project management, enabling seamless deployment and strategic innovation. Known for collaborative problem-solving, technical excellence, and a strong passion for driving business success through scalable AI-powered solutions.
                     </p>
                     <h5>What I bring to the table</h5>
                     <p>
@@ -169,8 +169,39 @@
                 </div>
 
                 <div class="mb-4">
+                <h2>Certifications</h2>
+                <div class="certification-tags">
+                    <button class="cert-tag active" data-category="professional">Professional</button>
+                    <button class="cert-tag" data-category="courses">Courses</button>
+                </div>
+
+                <div class="horizontal-scroll" id="certGrid">
+                    {% for cert in certifications.professional %}
+                    <div class="project-card">
+                    <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
+                        <img src="{{ cert.image }}" alt="{{ cert.title }}" style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
+                    </div>
+                    <div class="project-info">
+                        <h3 style="font-weight: bold;">{{ cert.title }}</h3>
+                        <p>{{ cert.platform }}</p>
+                        <p><small>{{ cert.date }}</small></p>
+                        
+                        <a href="{{ cert.url }}" class="verify-btn" target="_blank">Verify</a>
+                        {% if cert.related_project_url %}
+                        <a href="{{ cert.related_project_url }}" class="related-btn" target="_blank">Related Project</a>
+                        {% endif %}
+
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+
+
+
+
+                <div class="mb-4">
                     <h2>Career Timeline</h2>
-                    <img src="https://i.ibb.co/p0rHtzt/your-image.png" class="img-fluid" alt="Career Timeline">
+                    <img src="https://i.ibb.co/KpZMnSY6/timeline.png" class="img-fluid" alt="Career Timeline">
                 </div>
             </div>
         </div>
@@ -228,4 +259,42 @@
             });
         });
     });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const certTabs = document.querySelectorAll('.cert-tag');
+    const certGrid = document.getElementById('certGrid');
+    const certifications = {{ certifications | tojson }};
+
+    certTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        certTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const category = tab.getAttribute('data-category');
+        certGrid.innerHTML = '';
+
+        certifications[category].forEach(cert => {
+          certGrid.innerHTML += `
+            <div class="project-card">
+              <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
+                <img src="${cert.image}" alt="${cert.title}" style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
+              </div>
+              <div class="project-info">
+                <h3 style="font-weight: bold;">${cert.title}</h3>
+                <p>${cert.platform}</p>
+                <p><small>${cert.date}</small></p>
+                <a href="${cert.url}" class="verify-btn" target="_blank">Verify</a>
+                ${cert.related_project_url ? `<a href="${cert.related_project_url}" class="related-btn" target="_blank">Related Project</a>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+    });
+  });
+
     </script>
+
+

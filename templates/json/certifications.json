@@ -1,0 +1,21 @@
+{
+  "professional": [
+    {
+      "title": "Data Engineer Associate",
+      "platform": "By Databricks",
+      "date": "August 2025",
+      "image": "https://i.ibb.co/vxCYMCMd/Databricks-Certification.png",
+      "url": "https://credentials.databricks.com/97d252dd-de88-48a7-9f7e-16093cf62302#acc.uOWXfp9S"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Databricks Data Engineer Associate Prep",
+      "platform": "Udemy - Ramesh Retnasamy",
+      "date": "July 2025",
+      "image": "https://media.licdn.com/dms/image/v2/D4E22AQHlRCRAR-DnuA/feedshare-shrink_800/B4EZhQSu5eHgAk-/0/1753693746158?e=1757548800&v=beta&t=jpu9CSyrVwNEfiThYxfgCpJ5BJQiDQz6OtuyAAbZ0zg",
+      "url": "https://www.udemy.com/certificate/UC-37796f05-1eaf-49f4-afe6-047724447b26/",
+      "related_project_url": "/project.html?project=aws-pipeline"
+    }
+  ]
+}
