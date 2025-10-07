@@ -1,41 +1,56 @@
 {
-    "Data Analysis": [
+    "Data Analysis & Engineering": [
         "Cleaning",
         "Manipulation",
         "EDA",
         "Pattern Extraction",
-        "Data Mining"
+        "Data Mining",
+        "ETL Pipelines",
+        "Data Warehousing",
+        "Feature Engineering"
     ],
     "Statistical Analysis": [
         "Hypothesis Testing",
         "Regression",
-        "A/B Testing"
+        "A/B Testing",
+        "Statistical Modeling",
+        "Time-Series Forecasting"
     ],
-    "Data Visualization": [
+    "Data Visualization & BI": [
         "Tableau",
         "Power BI",
         "Matplotlib",
-        "Seaborn"
+        "Seaborn",
+        "Ggplot",
+        "KPI Dashboards"
     ],
-    "Programming": [
+    "Programming & Frameworks": [
         "Python",
         "C",
         "C++",
         "Java",
         "R",
         "Flask",
-        "Fast API",
-        "Django"
+        "FastAPI",
+        "Django",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "XGBoost"
     ],
     "Database Management": [
         "SQL",
         "MySQL",
-        "MongoDB"
+        "MongoDB",
+        "PostgreSQL",
+        "Snowflake"
     ],
-    "Cloud Platforms": [
+    "Cloud & Deployment": [
         "Google Cloud Platform",
         "AWS",
-        "Kubernetes"
+        "Microsoft Azure",
+        "Kubernetes",
+        "Docker"
     ],
     "Machine Learning": [
         "Decision Trees",
@@ -43,40 +58,49 @@
         "Logistic Regression",
         "Clustering",
         "NLP",
-        "RASA"
+        "RASA",
+        "XGBoost",
+        "Gradient Boosting",
+        "Model Optimization"
     ],
     "Deep Learning": [
         "Neural Networks",
         "CNNs",
         "RNNs",
         "GANs",
-        "Tensorflow",
-        "Keras"
+        "Autoencoders",
+        "Transfer Learning"
     ],
-    "Big Data": [
+    "Big Data & Pipelines": [
         "Hadoop",
         "Spark",
-        "Pyspark"
-    ],
-    "Tools": [
-        "MLOps",
-        "MLFlow",
-        "Git",
-        "Github",
-        "Github Actions",
-        "Excel",
-        "Google Analytics",
+        "PySpark",
+        "Databricks",
         "Apache Airflow"
     ],
-    "Gen AI": [
-        "RAG models",
+    "MLOps / DevOps": [
+        "MLFlow",
+        "Git",
+        "GitHub",
+        "GitHub Actions",
+        "CI/CD Pipelines",
+        "Terraform"
+    ],
+    "Generative & Agentic AI": [
+        "RAG Models",
         "LLMs",
-        "Agents",
-        "Llama index",
         "LangChain",
         "Vector DB",
         "Embeddings",
-        "LoRa & QLoRa fine tuning methods",
-        "Prompt Engineering"
+        "LoRa/QLoRa",
+        "Prompt Engineering",
+        "Agents",
+        "Agentic AI",
+        "MCP",
+        "Llama Index"
+    ],
+    "Advanced Tools": [
+        "Jenkins",
+        "Streamlit"
     ]
 }
