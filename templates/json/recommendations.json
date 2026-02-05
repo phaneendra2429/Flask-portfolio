@@ -4,41 +4,55 @@
         "title": "MSIM @ UIUC | Data Science & Analytics",
         "recommendation": "Working with Phaneendra on an Omdena project was a remarkable experience. He has exceptional ...",
         "date": "July 27, 2024",
-        "image": "https://i.ibb.co/fSFHBPZ/Ankitha.jpg"
+        "image": "https://i.ibb.co/fSFHBPZ/Ankitha.jpg",
+        "id": "67009512-8021-4eb5-8c23-f24d48df8247"
     },
     {
         "name": "Pranav Gavali",
         "title": "Data Analytics, Visualization & Journalist | Applied GenAI Developer ",
         "recommendation": "I strongly endorse Phaneendra Ganji for his exceptional dedication and problem-solving.  ...",
         "date": "July 4, 2024",
-        "image": "https://i.ibb.co/x3tjpsz/pranav.jpg"
+        "image": "https://i.ibb.co/x3tjpsz/pranav.jpg",
+        "id": "921b5134-5928-4020-9469-846c6de87b0f"
     },
     {
         "name": "Meriem Baziz",
         "title": "Computer Science Engineer | Master's Graduate | AI & Full Stack Enthusiast",
         "recommendation": "It was a privilege to work with Phaneendra on an innovative project initiated by Omdena ....",
         "date": "May 14, 2024",
-        "image": "https://i.ibb.co/crZp4Pp/image.png"
+        "image": "https://i.ibb.co/crZp4Pp/image.png",
+        "id": "60ce5406-3c14-4fc6-8d45-5f9d83ff61d0"
     },
     {
         "name": "Muhammad Yahiya",
         "title": "AI/ML Researcher | Architect | Philosopher -Meaning of Life",
         "recommendation": "I had the incredible opportunity to collaborate with Phaneendra G on Multi Agents ...",
         "date": "May 14, 2024",
-        "image": "https://i.ibb.co/KwJqfWK/yahya.png"
+        "image": "https://i.ibb.co/KwJqfWK/yahya.png",
+        "id": "8aba64f8-883d-4672-98c2-29f3969e2d32"
     },
     {
         "name": "Vijaya Krishna K",
         "title": "AI researcher | Jr. ML Engineer",
         "recommendation": "He led the development of a Mental Health Chatbot, harnessing Large Language Models (LLMs) ...",
         "date": "May 14, 2024",
-        "image": "https://i.ibb.co/BzV71QN/vijay.png"
+        "image": "https://i.ibb.co/BzV71QN/vijay.png",
+        "id": "98b00104-4263-4b1b-b415-41d945aa5396"
     },
     {
         "name": "Elizabeth Waithaka",
         "title": "Human Resource Business Partner || People Analytics",
         "recommendation": "Phaneendra is such a pleasure to work with. He is a great communicator, resilient in tackling  ...",
         "date": "April 10, 2024",
-        "image": "https://i.ibb.co/RHWCGfZ/Lizz.png"
+        "image": "https://i.ibb.co/RHWCGfZ/Lizz.png",
+        "id": "2bd1fc79-2e48-452b-9d5b-4f7b6a6420fe"
+    },
+    {
+        "name": "Yusi Chen",
+        "title": "Cheerful data scientist specialized in Gen Al, ML algorithms and Statistical Data Modeling",
+        "recommendation": "Working closely with Phaneendra was truly a pleasure. I work with him for three months on an invoice processing ...",
+        "date": "Jan 14, 2026",
+        "image": "https://media.licdn.com/dms/image/v2/D4E03AQHcIEMkiHeJJw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1694024265650?e=1772064000&v=beta&t=trpWd6Gpw-g4mP7XJoXtdtgDP6ozQ3e9X-GPx2iQy4w",
+        "id": "27af6253-0641-4437-a006-700a88439fab"
     }
 ]

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Recommendation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container my-5">
-        <h1 class="text-center">Add New Recommendation</h1>
-        <form action="/add-recommendation" method="POST">
+        <h1 class="text-center" id="form-title">Add New Recommendation</h1>
+        <form action="/add_recommendation" method="POST">
+            <input type="hidden" id="rec_id" name="id">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -30,9 +33,73 @@
                 <label for="image" class="form-label">Image URL</label>
                 <input type="text" class="form-control" id="image" name="image" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Recommendation</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Add Recommendation</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()" id="cancel-btn"
+                style="display:none;">Cancel</button>
         </form>
+
+        <hr class="my-5">
+
+        <h2 class="mb-4">Existing Recommendations</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rec in recommendations %}
+                    <tr>
+                        <td>{{ rec.name }}</td>
+                        <td>{{ rec.title }}</td>
+                        <td>{{ rec.date }}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm me-2"
+                                onclick='editRec({{ rec|tojson }})'>Edit</button>
+                            <a href="/delete_recommendation/{{ rec.id }}" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure you want to delete this recommendation?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function editRec(rec) {
+            document.getElementById('rec_id').value = rec.id || '';
+            document.getElementById('name').value = rec.name;
+            document.getElementById('title').value = rec.title;
+            document.getElementById('recommendation').value = rec.recommendation;
+            document.getElementById('date').value = rec.date;
+            document.getElementById('image').value = rec.image;
+
+            document.getElementById('form-title').innerText = 'Edit Recommendation';
+            document.getElementById('submit-btn').innerText = 'Update Recommendation';
+            document.getElementById('cancel-btn').style.display = 'inline-block';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function resetForm() {
+            document.getElementById('rec_id').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('title').value = '';
+            document.getElementById('recommendation').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('image').value = '';
+
+            document.getElementById('form-title').innerText = 'Add New Recommendation';
+            document.getElementById('submit-btn').innerText = 'Add Recommendation';
+            document.getElementById('cancel-btn').style.display = 'none';
+        }
+    </script>
 </body>
+
 </html>
