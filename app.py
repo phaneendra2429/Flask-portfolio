@@ -1,17 +1,19 @@
 from flask import Flask, render_template, jsonify, request
 import json
-from routes.projects import projects
-from routes.recommendations import recommend
-from routes.events import events
-from routes.skills import skills
 from routes.certifications import certifications
+import os
+from models import db, Project, Recommendation, Skill, Certification
+
 
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://user:password@localhost:5432/portfolio')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db.init_app(app)
+
+# JSON files are now only used for migration
 projects_file = "templates/json/cards_data.json"
-recommendations_file = "templates/json/recommendations.json"
-skills_file = "templates/json/skills.json"
 
 
 def load_json(file): 
@@ -19,23 +21,68 @@ def load_json(file):
 
 @app.route('/')
 def index():
+    projects_list = Project.query.all()
+    recommendations_list = Recommendation.query.all()
+    
+    # Structure skills into categories for the template
+    skills_query = Skill.query.all()
+    skills_data = {}
+    for s in skills_query:
+        skills_data.setdefault(s.category, []).append(s.name)
+        
+    # Structure certifications for the template
+    certs_query = Certification.query.all()
+    certifications_data = {'professional': [], 'courses': []}
+    for c in certs_query:
+        cert_item = {
+            'title': c.title,
+            'platform': c.platform,
+            'date': c.date,
+            'image': c.image,
+            'url': c.url,
+            'related_project_url': c.related_project_url
+        }
+        certifications_data[c.category].append(cert_item)
+
     return render_template(
         'index.html',
-        projects=load_json(projects_file),
-        recommendations=load_json(recommendations_file),
-        skills_data=load_json(skills_file),
-        certifications=load_json("templates/json/certifications.json")  # ⬅️ Add this
+        projects=projects_list,
+        recommendations=recommendations_list,
+        skills_data=skills_data,
+        certifications=certifications_data
     )
 
 
 @app.route('/filter_projects', methods=['POST'])
 def filter_projects():
     category = request.json['category']
-    projects_data = load_json(projects_file)
-    filtered = [p for p in projects_data if category in p['labels']]
-    return jsonify(filtered)
+    # If category is 'all', return all projects
+    if category.lower() == 'all':
+        projects_data = Project.query.all()
+    else:
+        # PostgreSQL specific query for ARRAY column
+        projects_data = Project.query.filter(Project.labels.any(category)).all()
+    
+    # Convert to dictionary for JSON response
+    result = []
+    for p in projects_data:
+        result.append({
+            'title': p.title,
+            'description': p.description,
+            'labels': p.labels,
+            'image_placeholder': p.image_placeholder,
+            'github': p.github
+        })
+    return jsonify(result)
 
 # Register blueprints
+# Note: Blueprints will be updated next
+from routes.projects import projects
+from routes.recommendations import recommend
+from routes.events import events
+from routes.skills import skills
+from routes.certifications import certifications
+
 app.register_blueprint(projects)
 app.register_blueprint(recommend)
 app.register_blueprint(events)

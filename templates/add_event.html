@@ -1,79 +1,84 @@
 <!-- templates/add_event.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add New Event</title>
   <link rel="stylesheet" href="../static/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="container my-5">
-  <h2>Add a New Event</h2>
-  <form method="POST">
-    <label for="title">Event Title</label>
-    <input type="text" id="title" name="title" required>
+  <div class="container my-5">
+    <h2>Add a New Event</h2>
+    <form method="POST">
+      <label for="title">Event Title</label>
+      <input type="text" id="title" name="title" required>
 
-    <label for="description">Description</label>
-    <textarea id="description" name="description" required></textarea>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required></textarea>
 
-    <label for="tags">Tags (comma separated)</label>
-    <input type="text" id="tags" name="tags" required>
+      <label for="tags">Tags (comma separated)</label>
+      <input type="text" id="tags" name="tags" required>
 
-    <label for="image_url">Image URL</label>
-    <input type="url" id="image_url" name="image_url" required>
+      <label for="image_url">Image URL</label>
+      <input type="url" id="image_url" name="image_url" required>
 
-    <label for="post_url">Post Url</label>
-    <input type="url" id="post_url" name="post_url" required>
+      <label for="post_url">Post Url</label>
+      <input type="url" id="post_url" name="post_url" required>
 
-    <label for="mode">Mode</label>
-    <select id="mode" name="mode" class="form-control" required>
-    <option value="in_person">In Person</option>
-    <option value="online">Online</option>
-    </select>
+      <label for="mode">Mode</label>
+      <select id="mode" name="mode" class="form-control" required>
+        <option value="in_person">In Person</option>
+        <option value="online">Online</option>
+      </select>
 
 
-    <button type="submit" class="btn btn-primary">Add Event</button>
-  </form>
+      <button type="submit" class="btn btn-primary">Add Event</button>
+    </form>
 
-  <hr class="my-5" />
+    <hr class="my-5" />
 
-  <h3>Current Events</h3>
-  <table class="table table-bordered table-striped">
-    <!-- Inside the <table> element -->
-<thead>
-  <tr>
-    <th>#</th>
-    <th>Title</th>
-    <th>Tags</th>
-    <th>Mode</th>
-    <th>Actions</th>
-  </tr>
-</thead>
-<tbody>
-  {% for event in events %}
-  <tr>
-    <td>{{ loop.index }}</td>
-    <td>{{ event.title }}</td>
-    <td>{{ event.tags | join(', ') }}</td>
-    <td>{{ event.mode }}</td>
-    <td>
-      <a href="{{ url_for('events.edit_event', index=event._idx) }}" class="btn btn-sm btn-outline-primary">Edit</a>
-      <a href="{{ url_for('events.delete_event', index=event._idx) }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this event?');">Delete</a>
-    </td>
-  </tr>
-  {% endfor %}
-</tbody>
+    <h3>Current Events</h3>
+    <table class="table table-bordered table-striped">
+      <!-- Inside the <table> element -->
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Tags</th>
+          <th>Mode</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in events %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ event.title }}</td>
+          <td>{{ event.tags | join(', ') }}</td>
+          <td>{{ event.mode }}</td>
+          <td>
+            <a href="{{ url_for('events.edit_event', event_id=event.id) }}"
+              class="btn btn-sm btn-outline-primary">Edit</a>
+            <a href="{{ url_for('events.delete_event', event_id=event.id) }}" class="btn btn-sm btn-outline-danger"
+              onclick="return confirm('Are you sure you want to delete this event?');">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
 
-    
-  </table>
 
-  <div class="text-center mt-4">
-            <a href="/" class="btn btn-secondary">← Back to Home</a>
-        </div>
-</div>
+    </table>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-secondary">← Back to Home</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
