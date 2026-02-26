@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from flask_login import login_required
 from models import db, Certification
 
 certifications = Blueprint('certifications', __name__)
 
 @certifications.route('/add_certification', methods=['GET', 'POST'])
+@login_required
 def add_certification():
     if request.method == 'POST':
         category = request.form['category']
@@ -23,6 +25,7 @@ def add_certification():
     return render_template('add_certification.html', certifications=all_certs)
 
 @certifications.route('/edit_certification/<int:cert_id>', methods=['GET', 'POST'])
+@login_required
 def edit_certification(cert_id):
     cert = Certification.query.get_or_404(cert_id)
     if request.method == 'POST':
@@ -37,6 +40,7 @@ def edit_certification(cert_id):
     return render_template('edit_certification.html', certification=cert)
 
 @certifications.route('/delete_certification/<int:cert_id>')
+@login_required
 def delete_certification(cert_id):
     cert = Certification.query.get(cert_id)
     if cert:

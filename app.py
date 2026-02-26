@@ -2,15 +2,26 @@ from flask import Flask, render_template, jsonify, request
 import json
 from routes.certifications import certifications
 import os
-from models import db, Project, Recommendation, Skill, Certification
+from models import db, Project, Recommendation, Skill, Certification, User
+from flask_login import LoginManager
+
 
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-key-for-now-123')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://user:password@localhost:5432/portfolio')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+
+login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 # JSON files are now only used for migration
 projects_file = "templates/json/cards_data.json"
@@ -76,18 +87,21 @@ def filter_projects():
     return jsonify(result)
 
 # Register blueprints
-# Note: Blueprints will be updated next
 from routes.projects import projects
 from routes.recommendations import recommend
 from routes.events import events
 from routes.skills import skills
 from routes.certifications import certifications
+from routes.auth import auth
+from routes.admin import admin
 
 app.register_blueprint(projects)
 app.register_blueprint(recommend)
 app.register_blueprint(events)
 app.register_blueprint(skills)
 app.register_blueprint(certifications)
+app.register_blueprint(auth)
+app.register_blueprint(admin)
 
 if __name__ == '__main__':
     app.run(debug=True)

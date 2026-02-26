@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from flask_login import login_required
 from models import db, Event
 
 events = Blueprint('events', __name__)
@@ -11,6 +12,7 @@ def events_view():
     return render_template('events.html', in_person=in_person, online=online)
 
 @events.route('/add_event', methods=['GET', 'POST'])
+@login_required
 def add_event():
     if request.method == 'POST':
         new_event = Event(
@@ -29,6 +31,7 @@ def add_event():
     return render_template("add_event.html", events=events_list)
 
 @events.route('/edit_event/<int:event_id>', methods=['GET', 'POST'])
+@login_required
 def edit_event(event_id):
     event = Event.query.get_or_404(event_id)
     if request.method == 'POST':
@@ -43,6 +46,7 @@ def edit_event(event_id):
     return render_template("edit_event.html", event=event)
 
 @events.route('/delete_event/<int:event_id>')
+@login_required
 def delete_event(event_id):
     event = Event.query.get(event_id)
     if event:

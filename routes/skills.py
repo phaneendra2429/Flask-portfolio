@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from flask_login import login_required
 from models import db, Skill
 
 skills = Blueprint('skills', __name__)
 
 @skills.route('/add_skill', methods=['GET', 'POST'])
+@login_required
 def add_skill():
     if request.method == 'POST':
         category = request.form['category']

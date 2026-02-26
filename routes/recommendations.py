@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
+from flask_login import login_required
 import uuid
 from models import db, Recommendation
 
 recommend = Blueprint('recommend', __name__)
 
 @recommend.route('/add_recommendation', methods=['GET', 'POST'])
+@login_required
 def add_recommendation():
     if request.method == 'POST':
         rec_id = request.form.get('id')
@@ -35,6 +37,7 @@ def add_recommendation():
     return render_template('add_rec.html', recommendations=recommendations_list)
 
 @recommend.route('/delete_recommendation/<string:rec_id>')
+@login_required
 def delete_recommendation(rec_id):
     rec = Recommendation.query.get(rec_id)
     if rec:

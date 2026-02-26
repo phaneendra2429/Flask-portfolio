@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,30 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2dhKJck/Picture1.png">
 
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light custom-navbar py-3">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Phaneendra Ganji</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav me-3">
-                        <li class="nav-item"><a href="https://medium.com/@phaneendraganji3" class="nav-link">Blogs</a></li>
-                        <li class="nav-item"><a href="https://open.spotify.com/show/1JclI1YYbiBl32LCl92joC" class="nav-link">Podcast</a></li>
+                        <li class="nav-item"><a href="https://medium.com/@phaneendraganji3" class="nav-link">Blogs</a>
+                        </li>
+                        <li class="nav-item"><a href="https://open.spotify.com/show/1JclI1YYbiBl32LCl92joC"
+                                class="nav-link">Podcast</a></li>
                         <li class="nav-item"><a href="/events" class="nav-link">Events</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item"><a href="{{ url_for('admin.dashboard') }}"
+                                class="nav-link text-primary fw-bold">Dashboard</a></li>
+                        {% endif %}
                     </ul>
-                    <a href="https://calendar.app.google/ML2TSa1PVcRiKaDv9" class="btn btn-primary book-call-btn">Book a Call</a>
+                    <a href="https://calendar.app.google/ML2TSa1PVcRiKaDv9" class="btn btn-primary book-call-btn">Book a
+                        Call</a>
                 </div>
             </div>
         </nav>
@@ -37,7 +47,8 @@
                 <div class="card text-center sidebar-card">
                     <div class="card-body">
                         <div class="profile-pic mb-3">
-                            <img src="https://i.ibb.co/L6cnMvp/image.png" class="rounded-circle img-fluid" alt="Profile Picture">
+                            <img src="https://i.ibb.co/L6cnMvp/image.png" class="rounded-circle img-fluid"
+                                alt="Profile Picture">
                         </div>
                         <h4 class="card-title">AI / ML Engineer</h4>
                         <p class="lead">Phaneendra Ganji</p>
@@ -49,18 +60,24 @@
                         </div>
 
                         <div class="social-icons mb-3">
-                            <a href="https://www.linkedin.com/in/phaneendra-g/" class="btn btn-outline-primary w-100 mb-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            <a href="https://github.com/phaneendra2429" class="btn btn-outline-secondary w-100"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/phaneendra-g/"
+                                class="btn btn-outline-primary w-100 mb-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/phaneendra2429" class="btn btn-outline-secondary w-100"><i
+                                    class="fab fa-github"></i> GitHub</a>
                         </div>
 
                         <div class="public-profiles-separator mb-3"></div>
 
                         <h5>Public Profiles</h5>
                         <ul class="profile-list">
-                            <li class="mb-2"><img src="https://i.ibb.co/s19GpJn/leetcode-ezgif-com-crop.gif" width="50" alt="Leetcode"> Leetcode</li>
-                            <li class="mb-2"><img src="https://i.ibb.co/0rbyYF0/image.png" width="25" alt="Kaggle"> Kaggle</li>
-                            <li class="mb-2"><img src="https://i.ibb.co/vLbTxcm/image.png" width="25" alt="Docker"> Docker</li>
-                            <li class="mb-2"><img src="https://i.ibb.co/L9qyNWd/image.png" width="25" alt="Tableau"> Tableau</li>
+                            <li class="mb-2"><img src="https://i.ibb.co/s19GpJn/leetcode-ezgif-com-crop.gif" width="50"
+                                    alt="Leetcode"> Leetcode</li>
+                            <li class="mb-2"><img src="https://i.ibb.co/0rbyYF0/image.png" width="25" alt="Kaggle">
+                                Kaggle</li>
+                            <li class="mb-2"><img src="https://i.ibb.co/vLbTxcm/image.png" width="25" alt="Docker">
+                                Docker</li>
+                            <li class="mb-2"><img src="https://i.ibb.co/L9qyNWd/image.png" width="25" alt="Tableau">
+                                Tableau</li>
                         </ul>
                     </div>
                 </div>
@@ -70,11 +87,20 @@
                 <div class="mb-4">
                     <h2>Summary</h2>
                     <p>
-                        Results-driven ML Engineer and Data Scientist with a Master's in Data Science and over 4 years of experience in Machine Learning, Generative AI, and Cloud Technologies. Proficient in leveraging advanced ML models, including CNNs and RAG pipelines, to deliver cutting-edge solutions in industries like healthcare and financial technology. Expertise in cloud platforms, data visualization, and full-cycle project management, enabling seamless deployment and strategic innovation. Known for collaborative problem-solving, technical excellence, and a strong passion for driving business success through scalable AI-powered solutions.
+                        Results-driven ML Engineer and Data Scientist with a Master's in Data Science and over 4 years
+                        of experience in Machine Learning, Generative AI, and Cloud Technologies. Proficient in
+                        leveraging advanced ML models, including CNNs and RAG pipelines, to deliver cutting-edge
+                        solutions in industries like healthcare and financial technology. Expertise in cloud platforms,
+                        data visualization, and full-cycle project management, enabling seamless deployment and
+                        strategic innovation. Known for collaborative problem-solving, technical excellence, and a
+                        strong passion for driving business success through scalable AI-powered solutions.
                     </p>
                     <h5>What I bring to the table</h5>
                     <p>
-                        Focused on end-to-end ML model deployment, leveraging MLOps, CI/CD, and cloud solutions to deliver scalable and production-ready AI systems. Experienced in optimizing workflows, enhancing decision-making with actionable insights, and managing the full model lifecycle. A technical innovator dedicated to creating impactful, AI-driven solutions.
+                        Focused on end-to-end ML model deployment, leveraging MLOps, CI/CD, and cloud solutions to
+                        deliver scalable and production-ready AI systems. Experienced in optimizing workflows, enhancing
+                        decision-making with actionable insights, and managing the full model lifecycle. A technical
+                        innovator dedicated to creating impactful, AI-driven solutions.
                     </p>
                 </div>
 
@@ -93,7 +119,8 @@
                             {% for project in projects|reverse %}
                             <div class="project-card">
                                 <div class="project-image-placeholder">
-                                    <img src="{{ project.image_placeholder }}" alt="{{ project.title }}" width="220" height="200">
+                                    <img src="{{ project.image_placeholder }}" alt="{{ project.title }}" width="220"
+                                        height="200">
                                 </div>
                                 <div class="project-info">
                                     <h3 style="font-weight: bold;">{{ project.title }}</h3>
@@ -109,14 +136,14 @@
                             </div>
                             {% endfor %}
                         </div>
-                        
+
                     </div>
                 </div>
 
                 <div class="mb-4">
                     <h2>Skills</h2>
                     <table class="table">
-                        
+
                         <tbody>
                             {% for category, topics in skills_data.items() %}
                             <tr>
@@ -126,12 +153,13 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                
+
                 </div>
 
                 <div class="mb-4">
                     <h2>Testimonials</h2>
-                    <div id="recommendationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div id="recommendationCarousel" class="carousel slide" data-bs-ride="carousel"
+                        data-bs-interval="5000">
                         <div class="carousel-inner">
                             {% for rec in recommendations|batch(2) %}
                             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
@@ -142,13 +170,18 @@
                                         <div class="card mb-3 mx-auto" style="max-width: 300px;">
                                             <div class="card-body text-center">
                                                 <!-- Smaller image size -->
-                                                <img src="{{ item.image }}" class="img-fluid rounded-circle mb-3" alt="{{ item.image }}" style="width: 100px; height: 100px;">
+                                                <img src="{{ item.image }}" class="img-fluid rounded-circle mb-3"
+                                                    alt="{{ item.image }}" style="width: 100px; height: 100px;">
                                                 <!-- Smaller font sizes -->
                                                 <h5 class="card-title" style="font-size: 1rem;">{{ item.name }}</h5>
-                                                <h6 class="card-subtitle mb-2 text-muted" style="font-size: 0.85rem;">{{ item.title }}</h6>
-                                                <p class="card-text" style="font-size: 0.9rem;">{{ item.recommendation }}</p>
-                                                <p class="card-date" style="font-size: 0.75rem;"><small class="text-muted">{{ item.date }}</small></p>
-                                                <a href="https://www.linkedin.com/in/phaneendra-g/details/recommendations/" target="_blank" class="read-more-link">Read more</a>
+                                                <h6 class="card-subtitle mb-2 text-muted" style="font-size: 0.85rem;">{{
+                                                    item.title }}</h6>
+                                                <p class="card-text" style="font-size: 0.9rem;">{{ item.recommendation
+                                                    }}</p>
+                                                <p class="card-date" style="font-size: 0.75rem;"><small
+                                                        class="text-muted">{{ item.date }}</small></p>
+                                                <a href="https://www.linkedin.com/in/phaneendra-g/details/recommendations/"
+                                                    target="_blank" class="read-more-link">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -157,11 +190,13 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#recommendationCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#recommendationCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#recommendationCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#recommendationCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -169,61 +204,67 @@
                 </div>
 
                 <div class="mb-4">
-                <h2>Certifications</h2>
-                <div class="certification-tags">
-                    <button class="cert-tag active" data-category="professional">Professional</button>
-                    <button class="cert-tag" data-category="courses">Courses</button>
-                </div>
-
-                <div class="horizontal-scroll" id="certGrid">
-                    {% for cert in certifications.professional %}
-                    <div class="project-card">
-                    <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
-                        <img src="{{ cert.image }}" alt="{{ cert.title }}" style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
+                    <h2>Certifications</h2>
+                    <div class="certification-tags">
+                        <button class="cert-tag active" data-category="professional">Professional</button>
+                        <button class="cert-tag" data-category="courses">Courses</button>
                     </div>
-                    <div class="project-info">
-                        <h3 style="font-weight: bold;">{{ cert.title }}</h3>
-                        <p>{{ cert.platform }}</p>
-                        <p><small>{{ cert.date }}</small></p>
-                        
-                        <a href="{{ cert.url }}" class="verify-btn" target="_blank">Verify</a>
-                        {% if cert.related_project_url %}
-                        <a href="{{ cert.related_project_url }}" class="related-btn" target="_blank">Related Project</a>
-                        {% endif %}
 
+                    <div class="horizontal-scroll" id="certGrid">
+                        {% for cert in certifications.professional %}
+                        <div class="project-card">
+                            <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
+                                <img src="{{ cert.image }}" alt="{{ cert.title }}"
+                                    style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
+                            </div>
+                            <div class="project-info">
+                                <h3 style="font-weight: bold;">{{ cert.title }}</h3>
+                                <p>{{ cert.platform }}</p>
+                                <p><small>{{ cert.date }}</small></p>
+
+                                <a href="{{ cert.url }}" class="verify-btn" target="_blank">Verify</a>
+                                {% if cert.related_project_url %}
+                                <a href="{{ cert.related_project_url }}" class="related-btn" target="_blank">Related
+                                    Project</a>
+                                {% endif %}
+
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    {% endfor %}
-                </div>
-                </div>
 
 
 
 
-                <div class="mb-4">
-                    <h2>Career Timeline</h2>
-                    <img src="https://i.ibb.co/KpZMnSY6/timeline.png" class="img-fluid" alt="Career Timeline">
+                    <div class="mb-4">
+                        <h2>Career Timeline</h2>
+                        <img src="https://i.ibb.co/KpZMnSY6/timeline.png" class="img-fluid" alt="Career Timeline">
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer class="text-center mt-5 mb-3">
         <a href="static\Phaneendra_G.pdf" class="btn btn-primary btn-lg">Download Resume</a>
+        <div class="mt-4">
+            <a href="{{ url_for('auth.login') }}" class="text-muted small text-decoration-none">Admin Login</a>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const projectTags = document.querySelectorAll('.project-tag');
-    
+
         projectTags.forEach(tag => {
             tag.addEventListener('click', () => {
                 const category = tag.getAttribute('data-category');
-    
+
                 fetch('/filter_projects', {
                     method: 'POST',
                     headers: {
@@ -231,16 +272,16 @@
                     },
                     body: JSON.stringify({ category }),
                 })
-                .then(response => response.json())
-                .then(data => {
-                    const projectGrid = document.getElementById('projectGrid');
-                    projectGrid.innerHTML = '';
-    
-                    data.forEach(project => {
-                        const projectCard = `
+                    .then(response => response.json())
+                    .then(data => {
+                        const projectGrid = document.getElementById('projectGrid');
+                        projectGrid.innerHTML = '';
+
+                        data.forEach(project => {
+                            const projectCard = `
                         <div class="project-card">
                             <div class="project-image-placeholder">
-                                <img src=${ project.image_placeholder } alt=${ project.title } width="220" height="200">
+                                <img src=${project.image_placeholder} alt=${project.title} width="220" height="200">
                             </div>
                             <div class="project-info">
                                 <h3 style="font-weight: bold;">${project.title}</h3>
@@ -248,53 +289,51 @@
                                 <div class="project-labels">
                                     ${project.labels.slice(1).map(label => `<span class="label">${label}</span>`).join('')}
                                 </div>
-                                <a href="${ project.github }" class="view-project-btn">View Project</a>
+                                <a href="${project.github}" class="view-project-btn">View Project</a>
                             </div>
                         </div>
                         `;
-                        projectGrid.innerHTML += projectCard;
-                    });
-                })
-                .catch(error => console.error('Error:', error));
+                            projectGrid.innerHTML += projectCard;
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
             });
         });
     });
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const certTabs = document.querySelectorAll('.cert-tag');
-    const certGrid = document.getElementById('certGrid');
-    const certifications = {{ certifications | tojson }};
+    document.addEventListener('DOMContentLoaded', () => {
+        const certTabs = document.querySelectorAll('.cert-tag');
+        const certGrid = document.getElementById('certGrid');
+        const certifications = {{ certifications | tojson
+    }};
 
     certTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        certTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        tab.addEventListener('click', () => {
+            certTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
 
-        const category = tab.getAttribute('data-category');
-        certGrid.innerHTML = '';
+            const category = tab.getAttribute('data-category');
+            certGrid.innerHTML = '';
 
-        certifications[category].forEach(cert => {
-          certGrid.innerHTML += `
-            <div class="project-card">
-              <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
-                <img src="${cert.image}" alt="${cert.title}" style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
-              </div>
-              <div class="project-info">
-                <h3 style="font-weight: bold;">${cert.title}</h3>
-                <p>${cert.platform}</p>
-                <p><small>${cert.date}</small></p>
-                <a href="${cert.url}" class="verify-btn" target="_blank">Verify</a>
-                ${cert.related_project_url ? `<a href="${cert.related_project_url}" class="related-btn" target="_blank">Related Project</a>` : ''}
-                </div>
-              </div>
-            </div>
-          `;
+            certifications[category].forEach(cert => {
+                certGrid.innerHTML += `
+                        <div class="project-card">
+                          <div class="project-image-placeholder" style="height: auto; padding: 0; background: none;">
+                            <img src="${cert.image}" alt="${cert.title}" style="width: 100%; height: auto; object-fit: contain; border-radius: 4px;">
+                          </div>
+                          <div class="project-info">
+                            <h3 style="font-weight: bold;">${cert.title}</h3>
+                            <p>${cert.platform}</p>
+                            <p><small>${cert.date}</small></p>
+                            <a href="${cert.url}" class="verify-btn" target="_blank">Verify</a>
+                            ${cert.related_project_url ? `<a href="${cert.related_project_url}" class="related-btn" target="_blank">Related Project</a>` : ''}
+                            </div>
+                          </div>
+                        `;
+            });
         });
-      });
     });
-  });
+    });
 
-    </script>
-
-
+</script>
