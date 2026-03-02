@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Project</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Add New Skill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-<h3>Add New Skill</h3>
-<form method="POST" action="{{ url_for('skills.add_skill') }}">
-    <div class="mb-3">
-        <label for="category" class="form-label">Category</label>
-        <input type="text" class="form-control" id="category" name="category" required>
+<body class="bg-light">
+    <div class="container my-5">
+        <h3 class="text-center mb-4">Add New Skill</h3>
+        <div class="card p-4 shadow-sm">
+            <form method="POST" action="{{ url_for('skills.add_skill') }}">
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category"
+                        placeholder="e.g., Programming" required>
+                </div>
+                <div class="mb-3">
+                    <label for="topics" class="form-label">Topics (comma separated)</label>
+                    <input type="text" class="form-control" id="topics" name="topics"
+                        placeholder="e.g., Python, JS, C++" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Add Skill</button>
+            </form>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-primary me-2">← Back to Dashboard</a>
+            <a href="/" class="btn btn-secondary">Back to Home</a>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="topics" class="form-label">Topics (comma separated)</label>
-        <input type="text" class="form-control" id="topics" name="topics" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Add Skill</button>
-</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

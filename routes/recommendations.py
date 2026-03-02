@@ -33,7 +33,16 @@ def add_recommendation():
         db.session.commit()
         return redirect(url_for('recommend.add_recommendation'))
         
-    recommendations_list = Recommendation.query.all()
+    recommendations_list = [
+        {
+            'id': r.id,
+            'name': r.name,
+            'title': r.title,
+            'recommendation': r.recommendation,
+            'date': r.date,
+            'image': r.image
+        } for r in Recommendation.query.all()
+    ]
     return render_template('add_rec.html', recommendations=recommendations_list)
 
 @recommend.route('/delete_recommendation/<string:rec_id>')

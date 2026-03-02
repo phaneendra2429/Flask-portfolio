@@ -95,6 +95,22 @@
                                 class="btn btn-sm btn-warning mt-2">Go to Certs</a>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="card stat-card p-4 text-center">
+                            <i class="fas fa-code fa-2x text-info mb-2"></i>
+                            <h5>Manage Skills</h5>
+                            <a href="{{ url_for('skills.add_skill') }}" class="btn btn-sm btn-info mt-2">Go to
+                                Skills</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card stat-card p-4 text-center">
+                            <i class="fas fa-comment fa-2x text-secondary mb-2"></i>
+                            <h5>Manage Recommends</h5>
+                            <a href="{{ url_for('recommend.add_recommendation') }}"
+                                class="btn btn-sm btn-secondary mt-2">Go to Recommends</a>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
