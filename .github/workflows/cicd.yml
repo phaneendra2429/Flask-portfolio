@@ -1,4 +1,4 @@
-name: Deploy Flask Project to Render
+name: CI — Test Flask Project
 
 on:
   push:
@@ -6,13 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+# Coolify handles building and deploying automatically via its
+# GitHub integration webhook — no deploy step needed here.
+
 jobs:
-  dockerbuild:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build The Docker Image
-      run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -23,7 +20,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
@@ -33,49 +30,3 @@ jobs:
     - name: Run tests
       run: |
         pytest
-
-  build-and-publish:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Login to DockerHub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        file: ./DockerFile
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
-
-    - name: Image digest
-      run: echo ${{ steps.build-and-publish.outputs.digest }}
-
-    
-  # deploy-to-ec2:
-  #   needs: build-and-publish
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: SSH into EC2 and Update Container
-  #       uses: appleboy/ssh-action@v0.1.7
-  #       with:
-  #         host: ${{ secrets.EC2_HOST }}
-  #         username: ${{ secrets.EC2_USERNAME }}
-  #         key: ${{ secrets.EC2_SSH_KEY }}
-  #         port: 22
-  #         script: |
-  #           docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest
-  #           docker stop flask_container || true
-  #           docker rm flask_container || true
-  #           docker run -d --name flask_container -p 80:5000 ${{ secrets.DOCKER_USERNAME }}/portfolio-flaskapp:latest

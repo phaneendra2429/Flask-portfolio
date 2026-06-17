@@ -1,6 +1,10 @@
 # Use an official Python runtime as a parent image
 FROM python:3.12.5-slim
 
+# Install pg_isready for DB readiness check
+RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -9,6 +13,10 @@ COPY requirements.txt .
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy wait-for-db script and make it executable
+COPY wait-for-db.sh /wait-for-db.sh
+RUN chmod +x /wait-for-db.sh
 
 # Copy the entire project to the container
 COPY . .
@@ -19,8 +27,7 @@ EXPOSE 5000
 # Set the environment variables for Flask
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=production  
-# Set to 'production' for deployment
+ENV FLASK_ENV=production
 
-# Command to run the Flask application
-CMD ["flask", "run"]
+# Wait for DB to be ready, then start Gunicorn
+CMD ["/wait-for-db.sh", "gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "app:app"]
