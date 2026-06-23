@@ -23,8 +23,8 @@ services:
       dockerfile: DockerFile
     container_name: portfolio_web
     restart: always
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
     environment:
       - FLASK_APP=app.py
       - FLASK_ENV=production
