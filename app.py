@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request
 import json
 from routes.certifications import certifications
 import os
-from models import db, Project, Recommendation, Skill, Certification, User
+from models import db, Project, Recommendation, Skill, Certification, User, ResumeSetting
 from flask_login import LoginManager
 
 
@@ -29,6 +29,12 @@ projects_file = "templates/json/cards_data.json"
 
 def load_json(file): 
     with open(file, "r") as f: return json.load(f)
+
+
+def get_resume_url():
+    """Return the one configured public resume URL, if it has been seeded."""
+    setting = db.session.get(ResumeSetting, 1)
+    return setting.resume_url if setting else None
 
 @app.route('/')
 def index():
@@ -60,7 +66,8 @@ def index():
         projects=projects_list,
         recommendations=recommendations_list,
         skills_data=skills_data,
-        certifications=certifications_data
+        certifications=certifications_data,
+        resume_url=get_resume_url()
     )
 
 

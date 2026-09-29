@@ -245,7 +245,9 @@
     </section>
 
     <footer class="text-center mt-5 mb-3">
-        <a href="static\Phaneendra_G.pdf" class="btn btn-primary btn-lg">Download Resume</a>
+        {% if resume_url %}
+        <a href="{{ resume_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">View Resume</a>
+        {% endif %}
         <div class="mt-4">
             <a href="{{ url_for('auth.login') }}" class="text-muted small text-decoration-none">Admin Login</a>
         </div>

@@ -61,3 +61,11 @@ class Event(db.Model):
     image_url = db.Column(db.String(500))
     post_url = db.Column(db.String(500))
     mode = db.Column(db.String(50), nullable=False) # 'in_person' or 'online'
+
+
+class ResumeSetting(db.Model):
+    """The single, public resume URL displayed across the portfolio."""
+    __tablename__ = 'resume_settings'
+
+    id = db.Column(db.Integer, primary_key=True)
+    resume_url = db.Column(db.String(500), nullable=False)

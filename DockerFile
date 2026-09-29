@@ -29,5 +29,6 @@ ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=production
 
-# Wait for DB to be ready, then start Gunicorn
-CMD ["/wait-for-db.sh", "gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "app:app"]
+# Wait for DB, create the resume setting if needed, then start Gunicorn.
+# The migration is idempotent, so it is safe on every container start.
+CMD ["/wait-for-db.sh", "sh", "-c", "python migrate_resume.py && exec gunicorn --bind 0.0.0.0:5000 --workers 2 app:app"]

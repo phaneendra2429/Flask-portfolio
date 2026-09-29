@@ -55,6 +55,7 @@
                         Certs</a>
                     <a href="{{ url_for('recommend.add_recommendation') }}"><i class="fas fa-comment me-2"></i>
                         Recommends</a>
+                    <a href="{{ url_for('admin.resume') }}"><i class="fas fa-file-pdf me-2"></i> Resume</a>
                     <hr class="mx-3">
                     <a href="{{ url_for('auth.logout') }}" class="text-danger"><i class="fas fa-sign-out-alt me-2"></i>
                         Logout</a>
@@ -109,6 +110,13 @@
                             <h5>Manage Recommends</h5>
                             <a href="{{ url_for('recommend.add_recommendation') }}"
                                 class="btn btn-sm btn-secondary mt-2">Go to Recommends</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card stat-card p-4 text-center">
+                            <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
+                            <h5>Manage Resume</h5>
+                            <a href="{{ url_for('admin.resume') }}" class="btn btn-sm btn-danger mt-2">Update Resume</a>
                         </div>
                     </div>
                 </div>

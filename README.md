@@ -44,7 +44,7 @@ flask-project/
 ├─ static/
 │  ├─ css/*.css
 │  ├─ js/*.js
-│  └─ Phaneendra_G.pdf        # Resume
+│  └─ timeline.png
 ├─ .github/workflows/cicd.yml # CI: tests + Docker build/push
 ├─ DockerFile                 # Container image definition
 ├─ requirements.txt
@@ -132,7 +132,13 @@ Notes:
 ## Development Tips
 
 - Templates live in `templates/` and use Bootstrap 5.
-- Static assets live in `static/`. Resume is served via `/static/Phaneendra_G.pdf`.
+- Static assets live in `static/`. The public resume is a Google Drive link stored in the database.
+
+### Resume setup
+
+The resume is managed from **Admin Dashboard → Resume** and must be a public Google Drive file link (for example, `https://drive.google.com/file/d/FILE_ID/view`). The Docker container runs `migrate_resume.py` automatically after PostgreSQL is ready. The script only creates the resume settings table; add the first public link from the dashboard after deployment. It is safe on every deployment and never overwrites an admin-updated link.
+
+For a manual run, execute the script only inside the deployed web container (or another environment whose `DATABASE_URL` points to the production PostgreSQL server). Running it on your Windows machine without a local PostgreSQL server will try `localhost:5432` and fail.
 - When editing JSON directly, ensure valid JSON formatting. The admin forms will write pretty-printed JSON with `indent=4`.
 
 ## Testing

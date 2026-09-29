@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required
-from models import db, Event
+from models import db, Event, ResumeSetting
 
 events = Blueprint('events', __name__)
 
@@ -9,7 +9,13 @@ def events_view():
     events_list = Event.query.all()
     in_person = [e for e in events_list if e.mode == "in_person"][::-1]
     online = [e for e in events_list if e.mode == "online"][::-1]
-    return render_template('events.html', in_person=in_person, online=online)
+    resume_setting = db.session.get(ResumeSetting, 1)
+    return render_template(
+        'events.html',
+        in_person=in_person,
+        online=online,
+        resume_url=resume_setting.resume_url if resume_setting else None,
+    )
 
 @events.route('/add_event', methods=['GET', 'POST'])
 @login_required
